@@ -49,6 +49,11 @@ body {
   animation: bounce-x 3s infinite;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: 30% 10% auto;
+}
+
 @keyframes bounce-x {
   0%,
   100% {
@@ -77,10 +82,16 @@ body {
     display: flex;
     justify-content: space-between;
   }
+  .footer-grid {
+    grid-template-columns: 35% 20% auto;
+  }
 }
 
 @media (max-width: 640px) {
   .icon-rotate {
     rotate: 60deg;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }

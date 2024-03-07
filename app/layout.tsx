@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const kanit = Kanit({
   weight: ["400", "500", "600"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={kanit.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
