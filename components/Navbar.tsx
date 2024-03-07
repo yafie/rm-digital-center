@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         showBackground ? "bg-[#fff] border-b border-[#efefef]" : ""
       }`}
     >
-      <div className="px-[30px] header-area h-[74px] w-full">
+      <div className="px-4 sm:px-[30px] header-area h-[74px] w-full">
         <div className="flex items-center h-full">
           <div className="block">
             <a href="/">
