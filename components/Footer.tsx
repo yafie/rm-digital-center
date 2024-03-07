@@ -1,4 +1,23 @@
+"use client";
+
+import gsap from "gsap";
+import { useEffect } from "react";
+
 const Footer: React.FC = () => {
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1 });
+
+    tl.to(".text-color-animation", {
+      duration: 1,
+      color: "#fff",
+      ease: "none",
+    }).to(".text-color-animation", {
+      duration: 1,
+      color: "rgb(190,140,13)",
+      ease: "none",
+    });
+  }, []);
+
   return (
     <footer className="bg-[#121212]">
       <div className="border-b border-solid border-[#262626]">
@@ -36,7 +55,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="py-[45px] sm:pt-[90px] text-center sm:text-right">
-            <h1 className="text-[52px] lg:text-[140px] text-white">
+            <h1 className="text-[52px] lg:text-[140px] bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-color-animation animate-bounce">
               LET'S TALK
             </h1>
           </div>

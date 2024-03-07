@@ -1,4 +1,25 @@
+"use client";
+import gsap from "gsap";
+import { useEffect } from "react";
 const SectionHero: React.FC = () => {
+  useEffect(() => {
+    gsap.to(".animate-text", {
+      x: 0,
+      opacity: 100,
+      ease: "power4.out",
+      stagger: 0.2,
+      duration: 2,
+    });
+
+    gsap.to(".animate-image", {
+      y: 0,
+      opacity: 100,
+      ease: "power4.out",
+      stagger: 0.2,
+      duration: 2,
+    });
+  }, []);
+
   return (
     <>
       <div className="mx-auto px-4 lg:px-[100px] h-full relative">
@@ -16,7 +37,7 @@ const SectionHero: React.FC = () => {
         </div>
         <div className="absolute top-0 left-0 w-full px-4 lg:px-[100px] flex flex-col sm:flex-row">
           <div className="w-full pt-[130px] sm:pt-[260px]">
-            <h1 className="text-[40px] lg:text-[80px] font-semibold leading-none pb-6 relative">
+            <h1 className="text-[40px] lg:text-[80px] font-semibold leading-none pb-6 relative animate-text translate-x-16 opacity-0">
               Digital Center Indonesia
               <img
                 className="absolute sm:rotate-0 bottom-[-150px] sm:top-0 right-8 sm:right-0 bounce-horizontal icon-rotate"
@@ -24,11 +45,11 @@ const SectionHero: React.FC = () => {
                 alt="icon arrow"
               />
             </h1>
-            <p className="text-[16px] sm:text-[20px] text-[#555] pb-[48px]">
+            <p className="text-[16px] sm:text-[20px] text-[#555] pb-[48px] animate-text translate-x-16 opacity-0">
               Improve your business by analyzing it deeply and using the latest
               technology to increase growth.
             </p>
-            <button className="font-medium mb-32 text-base text-white bg-[#745eff] leading-none px-[36px] py-[18px] rounded-md hover:bg-[#ff977b] transition duration-300">
+            <button className="font-medium mb-32 text-base text-white bg-[#745eff] leading-none px-[36px] py-[18px] rounded-md hover:bg-[#ff977b] transition duration-300 animate-text opacity-0">
               Get To Know More
             </button>
             <img
@@ -37,7 +58,7 @@ const SectionHero: React.FC = () => {
               alt="icon shape 3"
             />
           </div>
-          <div className="w-full pt-0 md:pt-[130px] sm:pt-[20px] bg-blue">
+          <div className="w-full pt-0 md:pt-[130px] sm:pt-[20px] bg-blue animate-image translate-y-16 opacity-0 ">
             <img src="/hero-4-1.png" alt="Hero Image" />
             <img
               className="absolute bottom-0 right-[100px] md:right-[1rem] hidden sm:block"
