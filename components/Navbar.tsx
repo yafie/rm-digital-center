@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 const Navbar: React.FC = () => {
   const [showBackground, setShowBackground] = useState(false);
 
-  const TOP_OFFSET = 74;
+  const TOP_OFFSET = 12;
 
   useEffect(() => {
     const handleScroll = () => {
+      console.log(window.scrollY, TOP_OFFSET);
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
       } else {
@@ -23,12 +24,12 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed py-[3px] top-0 z-50 w-full">
-      <div
-        className={`px-[30px] header-area h-[74px] w-full }  ${
-          showBackground ? "bg-[#fff] border-b border-[#efefef]" : ""
-        } `}
-      >
+    <header
+      className={`fixed py-[3px] top-0 z-50 w-full ${
+        showBackground ? "bg-[#fff] border-b border-[#efefef]" : ""
+      }`}
+    >
+      <div className="px-[30px] header-area h-[74px] w-full">
         <div className="flex items-center h-full">
           <div className="block">
             <a href="/">
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="w-full flex justify-end h-full">
+        <div className="w-full justify-end h-full hidden lg:flex">
           <ul className="p-0 m-0">
             <li className="inline-block mx-[38px] relative group">
               <a

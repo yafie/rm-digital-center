@@ -19,7 +19,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #fff;
-  min-height: 200vh;
 }
 
 @layer utilities {
@@ -44,4 +43,11 @@ body {
   border-radius: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media (max-width: 1023px) {
+  .header-area {
+    display: flex;
+    justify-content: space-between;
+  }
 }
